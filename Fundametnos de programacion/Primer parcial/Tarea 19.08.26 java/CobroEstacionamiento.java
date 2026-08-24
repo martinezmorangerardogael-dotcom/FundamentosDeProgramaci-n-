@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class CobroEstacionamiento {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese la cantidad de horas: ");
+        int horas = scanner.nextInt();
+        double total = 0;
+        
+        if (horas <= 2) {
+            total = horas * 30;
+        } else if (horas <= 5) {
+            total = (2 * 30) + ((horas - 2) * 25);
+        } else if (horas <= 10) {
+            total = (2 * 30) + (3 * 25) + ((horas - 5) * 20);
+        } else {
+            total = 380; 
+        }
+        
+        System.out.println("El total a pagar es: $" + total);
+        
+        scanner.close();
+    }
+}
